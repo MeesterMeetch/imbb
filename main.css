@@ -1,0 +1,12 @@
+section, aside {
+  display: inline-block;
+  verticle-align: top;
+}
+
+section {
+  width: 65%;
+}
+
+aside {
+  width: 30%;
+}
