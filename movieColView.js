@@ -10,6 +10,7 @@ module.exports = Backbone.View.extend({
     console.log('collection view running');
     this.addAll();
     this.listenTo(this.collection, 'change', this.reload);
+    this.listenTo(this.collection, 'destroy', this.reload);
   },
   reload: function () {
     this.$el.html('');

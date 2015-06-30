@@ -8,5 +8,6 @@ module.exports = $(function (){
   collection.fetch().then(function (data) {
       var applyView = new MovieCollectionView({collection: collection});
       var newMovieForm = new formView({collection: collection});
+      new formView ({collection: collection});
   });
 });

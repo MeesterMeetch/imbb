@@ -8,14 +8,18 @@
     <h3><%= title %></h3>
     <img src="<%= cover %>">
     <p><%= plot %></p>
+    <button type="destroy" class='destroy'>Destroy Movie</button>    
   </script>
 
   <script id ="formTmpl" type="text/template">
     <h3>New Movie</h3>
-    <input type="text" name="title" placeholder="Title">
-    <input type="text" name="cover">
-    <textarea name="plot" rows="8" cols="40"></textarea>
-    <button type ="submit">add Movie</button>
+    <form>
+      <input type="text" name="title" placeholder="Title">
+      <input type="text" name="cover">
+      <textarea name="plot" rows="8" cols="40"></textarea>
+      <button type ="submit">add Movie</button>
+    </form>
+
   </script>
 
 

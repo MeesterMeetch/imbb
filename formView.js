@@ -14,7 +14,9 @@ module.exports = Backbone.View.extend({
     this.render();
   },
   events: {
-    "submit form" : "handleSubmit"
+    "submit form" : "handleSubmit",
+    "click .destroy" : "destroy"
+
   },
   render: function () {
     this.model = new MovieModel();
@@ -27,11 +29,12 @@ module.exports = Backbone.View.extend({
     this.model.set({
       title: this.$el.find('input[name="title"]').val(),
       cover: this.$el.find('input[name="cover"]').val(),
-      plot: this.$el.find('input[name="plot"]').val(),
+      plot: this.$el.find('textarea[name="plot"]').val(),
     });
     this.model.save();
     this.collection.add(this.model);
     this.$el.find('input').val('');
     this.$el.find('textarea').val('');
   }
+
 });

@@ -14,5 +14,14 @@ module.exports = Backbone.View.extend({
     var markup = this.template(this.model.toJSON());
     this.$el.html(markup);
     return this;
-  }
+  },
+  events: {
+    "click .destroy" : "destroyThis"
+  },
+  destroyThis: function (event) {
+    event.preventDefault();
+    console.log('running destroy');
+    this.model.destroy();
+    return this;
+  },
 });
