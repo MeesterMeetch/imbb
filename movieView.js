@@ -16,7 +16,7 @@ module.exports = Backbone.View.extend({
     return this;
   },
   events: {
-    "click .destroy" : "destroyThis"
+    "click .destroy" : "destroyThis",
   },
   destroyThis: function (event) {
     event.preventDefault();
@@ -24,4 +24,14 @@ module.exports = Backbone.View.extend({
     this.model.destroy();
     return this;
   },
+  edit: function(){
+  this.$el.addClass('editing');
+  },
+  close: function(){
+    var value = this.input.val().trim();
+    if(value) {
+      this.model.save({title: value});
+    }
+    this.$el.removeClass('editing');
+  },  
 });

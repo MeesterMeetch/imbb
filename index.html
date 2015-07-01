@@ -8,7 +8,7 @@
     <h3><%= title %></h3>
     <img src="<%= cover %>">
     <p><%= plot %></p>
-    <button type="destroy" class='destroy'>Destroy Movie</button>    
+    <button type="destroy" class='destroy'>Destroy Movie</button>
   </script>
 
   <script id ="formTmpl" type="text/template">
@@ -18,6 +18,12 @@
       <input type="text" name="cover">
       <textarea name="plot" rows="8" cols="40"></textarea>
       <button type ="submit">add Movie</button>
+    </form>
+    <form id="editTmpl">
+      <input type="text" name="title" placeholder="Title">
+      <input type="text" name="cover">
+      <textarea name="plot" rows="8" cols="40"></textarea>
+      <button type ="editor" class="editor">edit Movie</button>
     </form>
 
   </script>
@@ -29,7 +35,7 @@
     <script type="text/template" id="item-template">
       <div class="view">
 <!--       <input class="edit" value="<%- title %>"> -->
-      <button class="destroy">remove</button>
+
       </div>
     </script>
   </section>
