@@ -174,5 +174,33 @@ var movies = [
     imdbID: "tt0816692",
     Type: "movie",
     Response: "True"
+  },
+  {
+    Title: "Almost Famous",
+    Year: "2000",
+    Cover: "http://ia.media-imdb.com/images/M/MV5BMTI0MDc0MzIyM15BMl5BanBnXkFtZTYwMzc4NzA5._V1_UY98_CR0,0,67,98_AL_.jpg",
+    Plot: "A high-school boy is given the chance to write a story for Rolling Stone Magazine about an up-and-coming rock band as he accompanies it on their concert tour.",
+    Rating: "7.9"
+  },
+  {
+    Title: "The Terminator",
+    Year: "1984",
+    Cover: "http://ia.media-imdb.com/images/M/MV5BODE1MDczNTUxOV5BMl5BanBnXkFtZTcwMTA0NDQyNA@@._V1_SX214_AL_.jpg",
+    Plot: "A human-looking indestructible cyborg is sent from 2029 to 1984 to assassinate a waitress, whose unborn son will lead humanity in a war against the machines, while a soldier from that war is sent to protect her at all costs.",
+    Rating: "8.1"
+  },
+  {
+    Title: "Fight Club",
+    Year: "1999",
+    Cover: "http://ia.media-imdb.com/images/M/MV5BMjIwNTYzMzE1M15BMl5BanBnXkFtZTcwOTE5Mzg3OA@@._V1_SX214_AL_.jpg",
+    Plot: "An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more...",
+    Rating: "8.9"
+  },
+  {
+    Title: "Cinderella",
+    Year: "2015",
+    Cover: "http://ia.media-imdb.com/images/M/MV5BMjMxODYyODEzN15BMl5BanBnXkFtZTgwMDk4OTU0MzE@._V1_SX214_AL_.jpg",
+    Plot: "When her father unexpectedly passes away, young Ella finds herself at the mercy of her cruel stepmother and her daughters. Never one to give up hope, Ella's fortunes begin to change after meeting a dashing stranger.",
+    Rating: "7.3"
   }
 ]
