@@ -1,12 +1,16 @@
 section, aside {
+  background-color: black;
   display: inline-block;
-  verticle-align: top;
-}
+  vertical-align: top; }
 
 section {
-  width: 65%;
-}
+  width: 65%; }
 
 aside {
-  width: 30%;
-}
+  width: 30%; }
+
+.edit-movie {
+  display: none; }
+
+.active {
+  display: block; }

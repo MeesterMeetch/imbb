@@ -3,24 +3,24 @@ var $ = require('jquery');
 Backbone.$ = $;
 var _ = require('underscore');
 var MovieModel = require('./movie');
-var formView = require('./formView');
-
-
 
 module.exports = Backbone.View.extend({
-  el: '#newMovie',
+  className: 'movieForm',
   template: _.template($('#formTmpl').html()),
-  initialize: function () {
+  initialize: function (options) {
+    this.el = options.el;
+    if(!this.model) {
+      this.model = new MovieModel();
+    }
     this.render();
   },
   events: {
-    "submit form" : "handleSubmit",
-    "click .destroy" : "destroy"
-
+    "submit form": "handleSubmit"
   },
   render: function () {
-    this.model = new MovieModel();
-    var markup = this.template(this.model.toJSON());
+    var myModel = this.model.isNew() ? {} : this.model.toJSON();
+    myModel.isNew = this.model.isNew();
+    var markup = this.template(myModel);
     this.$el.html(markup);
     return this;
   },
@@ -29,12 +29,11 @@ module.exports = Backbone.View.extend({
     this.model.set({
       title: this.$el.find('input[name="title"]').val(),
       cover: this.$el.find('input[name="cover"]').val(),
-      plot: this.$el.find('textarea[name="plot"]').val(),
+      plot: this.$el.find('textarea[name="plot"]').val()
     });
     this.model.save();
     this.collection.add(this.model);
     this.$el.find('input').val('');
     this.$el.find('textarea').val('');
   }
-
 });

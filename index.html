@@ -1,48 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>IMBB</title>
-  <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
-    <script id="movieTmpl" type="text/template">
-    <h3><%= title %></h3>
-    <img src="<%= cover %>">
-    <p><%= plot %></p>
-    <button type="destroy" class='destroy'>Destroy Movie</button>
-  </script>
-
-  <script id ="formTmpl" type="text/template">
-    <h3>New Movie</h3>
-    <form>
-      <input type="text" name="title" placeholder="Title">
-      <input type="text" name="cover">
-      <textarea name="plot" rows="8" cols="40"></textarea>
-      <button type ="submit">add Movie</button>
-    </form>
-    <form id="editTmpl">
-      <input type="text" name="title" placeholder="Title">
-      <input type="text" name="cover">
-      <textarea name="plot" rows="8" cols="40"></textarea>
-      <button type ="editor" class="editor">edit Movie</button>
-    </form>
-
-  </script>
-
-
-</head>
-<body>
-  <section id="movies">
-    <script type="text/template" id="item-template">
-      <div class="view">
-<!--       <input class="edit" value="<%- title %>"> -->
-
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IMBB</title>
+    <link rel="stylesheet" href="main.css">
+    <script type="text/template" id="movieTmpl">
+      <h3><%= title %></h3>
+      <img src="<%= cover %>" alt="">
+      <p><%= plot %></p>
+      <div class="edit-movie">
+        <!-- form goes here -->
       </div>
+      <a href="" class="trash">DELETE</a> <a href="" class="editing">EDIT</a>
     </script>
-  </section>
-  <aside id="newMovie">
-  </aside>
+    <script type="text/template" id="formTmpl">
+      <h3>New Movie</h3>
+      <form action="">
+        <% if(isNew) { %>
+          <input type="text" name="title" placeholder="Title">
+          <input type="text" name="cover">
+          <textarea name="plot" rows="8" cols="40"></textarea>
+          <button type="submit">Add Movie</button>
+        <% } else { %>
+          <input type="text" name="title" placeholder="Title" value="<%= title %>">
+          <input type="text" name="cover" value="<%= cover %>">
+          <textarea name="plot" rows="8" cols="40"><%= plot %></textarea>
+          <button type="submit">Edit Movie</button>
+        <% } %>
 
-
-    <script type='text/javascript' src='bundled.js'></script>
-</body>
+      </form>
+    </script>
+  </head>
+  <body>
+    <section id="movies">
+      <!-- movies to here -->
+    </section>
+    <aside id="newMovie">
+      <!-- form goes here -->
+    </aside>
+    <script type="text/javascript" src="bundled.js"></script>
+  </body>
 </html>

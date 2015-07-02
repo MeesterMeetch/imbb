@@ -1,13 +1,13 @@
-var MovieCollection = require('./movieCollection');
-var MovieCollectionView = require('./movieColView');
+// var mockData = require('./data');
+var Backbone = require('backbone');
 var $ = require('jquery');
-var formView = require('./formView');
+Backbone.$ = $;
 
-module.exports = $(function (){
-  var collection = new MovieCollection();
-  collection.fetch().then(function (data) {
-      var applyView = new MovieCollectionView({collection: collection});
-      var newMovieForm = new formView({collection: collection});
-      new formView ({collection: collection});
-  });
+var Router = require('./router');
+
+module.exports = $(function () {
+  new Router();
+
+  Backbone.history.start();
+
 });

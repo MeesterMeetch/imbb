@@ -7,10 +7,9 @@ var MovieView = require('./movieView');
 module.exports = Backbone.View.extend({
   el: '#movies',
   initialize: function () {
-    console.log('collection view running');
+
     this.addAll();
-    this.listenTo(this.collection, 'change', this.reload);
-    this.listenTo(this.collection, 'destroy', this.reload);
+    this.listenTo(this.collection, 'update', this.reload);
   },
   reload: function () {
     this.$el.html('');
@@ -22,5 +21,6 @@ module.exports = Backbone.View.extend({
   addOne: function (movie) {
     var movieView = new MovieView({model: movie});
     this.$el.append(movieView.render().el);
-},
+
+  }
 });
