@@ -2,14 +2,35 @@
   text-decoration: none;
 }
 
+body {
+    background-color: #BDBCB9;
+}
+
 #container{
   width: 80%;
   margin: 0 auto;
+  background-color: #black;
+  text-align: center;
 }
 
 .navbar{
   text-align: center;
   background-color: black;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: gold;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+  color: gold;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+a:hover{
+  color: gold;
+  font-weight: 900;
+  font-size: 30px;
 }
 
 section, aside {
@@ -21,7 +42,7 @@ section, aside {
   }
 
 section {
-  width: 65%; }
+  width: 80%; }
 
 aside {
   width: 30%; }
